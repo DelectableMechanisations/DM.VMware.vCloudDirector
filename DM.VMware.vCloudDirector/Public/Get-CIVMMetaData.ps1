@@ -1,36 +1,36 @@
 <#
     .SYNOPSIS
-    This cmdlet retrieves the metadata specified on a vCloud Director virtual machine.
+        This cmdlet retrieves the metadata specified on a vCloud Director virtual machine.
 
     .DESCRIPTION
-    This cmdlet retrieves the metadata specified on a vCloud Director virtual machine, including its name, its type and its value.
+        This cmdlet retrieves the metadata specified on a vCloud Director virtual machine, including its name, its type and its value.
 
-    You must have an existing vCloud session (Connect-CIServer) for this function to work.
-
-    .EXAMPLE
-    Get-CIVM Server01 | Get-CIVMMetaData
-
-    Returns all metadata configured on the VM 'Server01'
+        You must have an existing vCloud session (Connect-CIServer) for this function to work.
 
     .EXAMPLE
-    Get-CIVMMetaData -CIVM (Get-CIVM Server01)
+        Get-CIVM Server01 | Get-CIVMMetaData
 
-    Returns all metadata configured on the VM 'Server01' (non-pipeline variation of the previous example).
-
-    .EXAMPLE
-    Get-CIVM Server01, Server02 | Get-CIVMMetaData | Format-Table -Property *
-
-    Returns all metadata configured on the the VMs 'Server01' & 'Server02' and displays them in tabular format.
+        Returns all metadata configured on the VM 'Server01'
 
     .EXAMPLE
-    Get-CIVM Server01 | Get-CIVMMetaData -Name ServiceOwner
+        Get-CIVMMetaData -CIVM (Get-CIVM Server01)
 
-    Returns metadata with the name 'ServiceOwner' configured on the VM 'Server01'
+        Returns all metadata configured on the VM 'Server01' (non-pipeline variation of the previous example).
 
     .EXAMPLE
-    Get-CIVM Server01 | Get-CIVMMetaData -Name *Service*
+        Get-CIVM Server01, Server02 | Get-CIVMMetaData | Format-Table -Property *
 
-    Returns metadata with a name like '*Service*' configured on the VM 'Server01'
+        Returns all metadata configured on the the VMs 'Server01' & 'Server02' and displays them in tabular format.
+
+    .EXAMPLE
+        Get-CIVM Server01 | Get-CIVMMetaData -Name ServiceOwner
+
+        Returns metadata with the name 'ServiceOwner' configured on the VM 'Server01'
+
+    .EXAMPLE
+        Get-CIVM Server01 | Get-CIVMMetaData -Name *Service*
+
+        Returns metadata with a name like '*Service*' configured on the VM 'Server01'
 
     .PARAMETER CIVM
         Specifies the virtual machine you want to retrieve the virtual metadata for.
