@@ -37,7 +37,19 @@ Function Invoke-vCloudDirectorWebRequest {
     $invokeWebRequestParameters['ErrorAction']     = 'Stop'
 
     #Use Invoke-WebRequest to make the request.
-    $vCloudOperation = Invoke-WebRequest @invokeWebRequestParameters
+    try {
+        $vCloudOperation = Invoke-WebRequest @invokeWebRequestParameters
+
+    } catch {
+        $PSCmdlet.ThrowTerminatingError(
+            [System.Management.Automation.ErrorRecord]::new(
+                [System.Exception]::new($_.Exception.Message),
+                'FullyQualifiedName',
+                [System.Management.Automation.ErrorCategory]::InvalidData,
+                "$($Method.ToString().ToUpper()) $Uri"
+            )
+        )
+    }
 
     #If XML content is detected then convert to a XML object and return.
     if ($vCloudOperation.Content -like '<?xml version="1.0"*') {
