@@ -1,9 +1,9 @@
 <#
     .SYNOPSIS
-       This cmdlet retrieves the virtual hard disks available on a vCloud Director system.
+       This cmdlet retrieves the virtual hard disks attached to a vCloud Director VM.
 
     .DESCRIPTION
-       This cmdlet retrieves the virtual hard disks available on a vCloud Director system and returns (roughly) the same properties displayed in the vCloud Director Web Portal.
+       This cmdlet retrieves the virtual hard disks attached to a vCloud Director VM and returns (roughly) the same properties displayed in the vCloud Director Web Portal.
        It only supports the retrieval of SCSI and SATA based virtual hard disks (it will not work for IDE drives).
 
        You must have an existing vCloud session (Connect-CIServer) for this function to work.
