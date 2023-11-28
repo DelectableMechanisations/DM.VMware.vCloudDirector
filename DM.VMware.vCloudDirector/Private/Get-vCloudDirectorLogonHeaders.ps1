@@ -14,8 +14,8 @@ Function Get-vCloudDirectorLogonHeaders {
 
     #Create authorisation headers used to connect to vCloud Director
     $headers = @{
-        "x-vcloud-authorization" = $global:DefaultCIServers[0].sessionid
-        "Accept"                 = "application/*+xml;version=$global:DefaultCIApiVersion"
+        "Authorization" = $global:DefaultCIServers[0].sessionid
+        "Accept"        = "application/*+xml;version=$global:DefaultCIApiVersion"
     }
 
     Write-Output -InputObject $headers
