@@ -52,10 +52,10 @@ Function Get-CIVMMetaData {
 
     Begin {
         $metadataType = @{
-            'VMware.VimAutomation.Cloud.Views.MetadataNumberValue'   = 'Number'
-            'VMware.VimAutomation.Cloud.Views.MetadataBooleanValue'  = 'YesAndNo'
-            'VMware.VimAutomation.Cloud.Views.MetadataDateTimeValue' = 'DateTime'
-            'VMware.VimAutomation.Cloud.Views.MetadataStringValue'   = 'Text'
+            'VMware.VimAutomation.Cloud.Views.MetadataNumberValue'   = 'MetadataNumberValue'
+            'VMware.VimAutomation.Cloud.Views.MetadataBooleanValue'  = 'MetadataBooleanValue'
+            'VMware.VimAutomation.Cloud.Views.MetadataDateTimeValue' = 'MetadataDateTimeValue'
+            'VMware.VimAutomation.Cloud.Views.MetadataStringValue'   = 'MetadataStringValue'
         }
     }
 
