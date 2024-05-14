@@ -93,7 +93,7 @@ Function Set-CIVMComputePolicy {
             $vCloudVM.Vm.VdcComputePolicy.type = $ComputePolicy.type
 
             #Retrieve the URL used to make the change
-            $reconfigureVmLink = $vm.ExtensionData.Link | Where-Object {$_.Rel -eq 'reconfigureVm'}
+            $reconfigureVmLink = $vm.ExtensionData.Link | Where-Object {$_.Rel -eq 'reconfigureVm' -and $_.Type -eq 'application/vnd.vmware.vcloud.vm+xml'}
 
             #Update the Compute Policy for the VM.
             Write-Verbose -Message "Updating vDC Compute Policy on '$($vm.Name)' from '$($vm.ExtensionData.VdcComputePolicy.Name)' to $($ComputePolicy.name)."

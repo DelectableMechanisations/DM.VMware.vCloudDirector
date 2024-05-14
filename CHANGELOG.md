@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.2] - 2024-05-15
+### Changed
+- Bugfix an issue with Set-CIVMComputePolicy failing due to it processing multiple URLs instead of 1.
+
 ## [1.1.1] - 2024-01-11
 ### Changed
 - Update type options output by Get-CIVMMetaData function to more accurately reflect the names used by the vCloud Director API.
